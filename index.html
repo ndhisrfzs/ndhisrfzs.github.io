@@ -160,6 +160,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Unity-Shader】渲染流程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/22/Unity-Shader】渲染流程/">【Unity Shader】渲染流程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/22/Unity-Shader】渲染流程/" class="archive-article-date">
+  	<time datetime="2019-04-22T08:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Unity游戏引擎渲染流程分为CPU和GPU两部分。<br>CPU:<br>    FBX-&gt;MeshRender<br>    FBX：模型文件 里面包含 uv，顶点，法线，切线等渲染所需信息<br>    MeshRender：将FBX中的信息传递到GPU。分两种</p>
+<ul>
+<li>SkinMeshRender：带蒙皮的骨骼</li>
+<li>MeshRender，MeshFilter：不带蒙皮，主要将顶点等信息传递到GPU</li>
+</ul>
+<p>GPU:渲染管线</p>
+<p>顶点着色器-&gt;光栅化-&gt;片段着色器-&gt;Alpha测试-&gt;模板测试-&gt;深度测试-&gt;Blend-&gt;GBuffer-&gt;FrontBuffer-&gt;FrameBuffer-&gt;显示器<br>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/22/Unity-Shader】渲染流程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -949,7 +1029,7 @@
 
         
         <a href="/2018/09/01/travelwrst/" class="archive-article-date">
-  	<time datetime="2018-09-01T08:27:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-01</time>
+  	<time datetime="2018-09-01T08:27:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-01</time>
 </a>
         
       </header>
@@ -1104,7 +1184,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工作</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,7 +1192,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">工作</a>
               </li>
             
             <div class="clearfix"></div>
