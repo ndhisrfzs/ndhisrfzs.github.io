@@ -876,7 +876,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>应公司策划要求，需要一个数据库按表导入导出的工具配合svn来进行差异匹配，方便策划每天对数据库修改的记录工具，我使用bcp命令实现如下批处理工具，中间踩了不少坑，现保存在这边希望可以帮到需要此工具的同学。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">::数据库地址</span><br><span class="line">set ip=127.0.0.1</span><br><span class="line">::数据库帐号</span><br><span class="line">set login=sa</span><br><span class="line">::数据库密码</span><br><span class="line">set passward=Passward</span><br><span class="line">::数据库名称</span><br><span class="line">set dataBase=MyDBName</span><br><span class="line">::保存txt文件的路径</span><br><span class="line">set filePath=d:\data\</span><br><span class="line">::导入到数据库 （这边的way注释掉上面的in则是从数据库导出到txt，注释掉下面的则是从txt导入到数据库）</span><br><span class="line">::set way=in</span><br><span class="line">::导出到txt文本</span><br><span class="line">set way=out</span><br><span class="line"> </span><br><span class="line">::这边先创建文件夹，按个人需求改</span><br><span class="line">md %filePath%</span><br><span class="line"> </span><br><span class="line">::这边填写数据库表名</span><br><span class="line">set dataTable=table1 table2 table3 table4 table5 table6</span><br><span class="line"> </span><br><span class="line">::这边是根据导入还是导出进行一个删除数据库表的操作，因为bcp导入到数据库时如果原先数据库有数据会出现重复键不让插入的错误导致插入失败</span><br><span class="line">if %way% == in (for %%i in (%dataTable%) do osql -S %ip% -U%login% -P%passward% -Q &quot;TRUNCATE TABLE %dataBase%..%%i&quot; )</span><br><span class="line"> </span><br><span class="line">::这边是一个表数据的导入导出操作，使用bcp命令</span><br><span class="line">for %%i in (%dataTable%) do bcp %dataBase%..%%i %way% %filePath%%%i.txt -c -S %ip% -U%login% -P%passward%</span><br><span class="line"> </span><br><span class="line">pause</span><br></pre></td></tr></table></figure></p>
+        <p>应公司策划要求，需要一个数据库按表导入导出的工具配合svn来进行差异匹配，方便策划每天对数据库修改的记录工具，我使用bcp命令实现如下批处理工具，中间踩了不少坑，现保存在这边希望可以帮到需要此工具的同学。<br><code>`</code><br>::数据库地址<br>set ip=127.0.0.1<br>::数据库帐号<br>set login=sa<br>::数据库密码<br>set passward=Passward<br>::数据库名称<br>set dataBase=MyDBName<br>::保存txt文件的路径<br>set filePath=d:\data\<br>::导入到数据库 （这边的way注释掉上面的in则是从数据库导出到txt，注释掉下面的则是从txt导入到数据库）<br>::set way=in<br>::导出到txt文本<br>set way=out</p>
+<p>::这边先创建文件夹，按个人需求改<br>md %filePath%</p>
+<p>::这边填写数据库表名<br>set dataTable=table1 table2 table3 table4 table5 table6</p>
+<p>::这边是根据导入还是导出进行一个删除数据库表的操作，因为bcp导入到数据库时如果原先数据库有数据会出现重复键不让插入的错误导致插入失败<br>if %way% == in (for %%i in (%dataTable%) do osql -S %ip% -U%login% -P%passward% -Q “TRUNCATE TABLE %dataBase%..%%i” )</p>
+<p>::这边是一个表数据的导入导出操作，使用bcp命令<br>for %%i in (%dataTable%) do bcp %dataBase%..%%i %way% %filePath%%%i.txt -c -S %ip% -U%login% -P%passward%</p>
+<p>pause</p>
         
       
 
@@ -1180,6 +1185,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
@@ -1189,10 +1198,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工作</a>
               </li>
             
             <div class="clearfix"></div>
